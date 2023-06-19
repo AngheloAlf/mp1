@@ -5054,15 +5054,12 @@ SECTIONS
         StaffScene_TEXT_END = .;
         StaffScene_TEXT_SIZE = ABSOLUTE(StaffScene_TEXT_END - StaffScene_TEXT_START);
         StaffScene_DATA_START = .;
-        ovl_63_StaffScene_2A9970_c = .;
-        build/src/ovl_63_StaffScene/2A9970.c.o(.data);
-        ovl_63_StaffScene_2A9CA0_c = .;
-        build/src/ovl_63_StaffScene/2A9CA0.c.o(.data);
+        ovl_63_StaffScene_2B0670_data__s = .;
+        build/asm/data/ovl_63_StaffScene/2B0670.data.s.o(.data);
         StaffScene_DATA_END = .;
         StaffScene_DATA_SIZE = ABSOLUTE(StaffScene_DATA_END - StaffScene_DATA_START);
         StaffScene_RODATA_START = .;
-        build/src/ovl_63_StaffScene/2A9970.c.o(.rodata);
-        build/src/ovl_63_StaffScene/2A9CA0.c.o(.rodata);
+        build/asm/data/ovl_63_StaffScene/2B1550.rodata.s.o(.rodata);
         StaffScene_RODATA_END = .;
         StaffScene_RODATA_SIZE = ABSOLUTE(StaffScene_RODATA_END - StaffScene_RODATA_START);
     }
@@ -5079,20 +5076,6 @@ SECTIONS
     __romPos = ALIGN(__romPos, 16);
     StaffScene_ROM_END = __romPos;
     StaffScene_VRAM_END = .;
-
-    _2B0670_ROM_START = __romPos;
-    _2B0670_VRAM = ADDR(._2B0670);
-    ._2B0670 : AT(_2B0670_ROM_START) SUBALIGN(16)
-    {
-        _2B0670_DATA_START = .;
-        _2B0670_bin = .;
-        build/assets/2B0670.bin.o(.data);
-        _2B0670_DATA_END = .;
-        _2B0670_DATA_SIZE = ABSOLUTE(_2B0670_DATA_END - _2B0670_DATA_START);
-    }
-    __romPos += SIZEOF(._2B0670);
-    _2B0670_ROM_END = __romPos;
-    _2B0670_VRAM_END = .;
 
     ResultsEternalStar2_ROM_START = __romPos;
     ResultsEternalStar2_VRAM = ADDR(.ResultsEternalStar2);

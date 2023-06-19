@@ -37,7 +37,7 @@ segments:
     symbol_name_format: $VRAM
     start: 0x1000
     vram: 0x80000400
-    bss_size: 0x29790
+    # bss_size: 0x29790
     subsegments:
       - [0x1000, hasm, entrypoint]
       - [0x1060, c]
@@ -494,14 +494,14 @@ segments:
       - [0xCD320, bin] # TODO: Figure this out 
 
     # 2.0I N64 lib .bss sections
-      - { start: 0xCDA50, type: bss, vram: 0x800CCE50 }
-      # - [0xCDA50, .bss, "../src/padding/bss_padding_1d330"] # TODO: Figure this out
-      # - [0xCDA50, .bss, "../src/lib/2.0I/io/sptask"]
-      # - [0xCDA50, .bss, "../src/lib/2.0I/io/controller"]
-      # - [0xCDA50, .bss, "../src/lib/2.0I/io/piacs"]
-      # - [0xCDA50, .bss, "../src/lib/2.0I/io/motor"]
-      # - [0xCDA50, .bss, "../src/lib/2.0I/io/pimgr"]
-      # - [0xCDA50, .bss, "../src/lib/2.0I/io/vimgr"]
+      - [0xCDA50, .bss, "../src/padding/bss_padding_1d330"] # TODO: Figure this out
+      - [0xCDA50, .bss, "../src/lib/2.0I/io/sptask"]
+      - [0xCDA50, .bss, "../src/lib/2.0I/io/controller"]
+      - [0xCDA50, .bss, "../src/lib/2.0I/io/piacs"]
+      - [0xCDA50, .bss, "../src/lib/2.0I/io/motor"]
+      - [0xCDA50, .bss, "../src/lib/2.0I/io/pimgr"]
+      - [0xCDA50, .bss, "../src/lib/2.0I/io/vimgr"]
+      # - { start: 0xCDA50, type: bss, vram: 0x800CCE50 }
       #- [0xCDA50, .bss, "../src/padding/bss_padding_b2b0"] # TODO: Figure this out (padding betwen bss and common?)
       #- [0xCDA50, .bss, "../src/lib/2.0I/io/pfsisplug"]
 
@@ -518,7 +518,7 @@ segments:
       - [0xD27D0, c]
       - [0xD4C50, data, CDA50]
       #- [0xD4F48, rodata, CDA50]
-      - [0xD4C50, bin]
+      # - [0xD4C50, bin]
   - type: code
     start: 0xD51E0
     vram: 0x800F65E0
